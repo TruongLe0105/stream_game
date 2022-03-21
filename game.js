@@ -183,7 +183,7 @@ const getTrendingGame = async () => {
         showGames = document.querySelector(".showGames")
         showGames.innerHTML = "";
         listTrends.data.forEach((game, index) => {
-            const positive = listTrends.data[index].positive_ratings
+            const app = listTrends.data[index].appid
             // const app = allGames.data[index].appid;
             const div = document.createElement("div");
             div.innerHTML = `<div class="background">
@@ -199,7 +199,7 @@ const getTrendingGame = async () => {
         </div>`;
             showGames.appendChild(div);
             div.addEventListener("click", () => {
-                renderDetailGame(positive);
+                renderDetailGame(app);
             })
         })
     } catch (error) {
